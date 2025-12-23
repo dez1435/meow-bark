@@ -11,8 +11,39 @@
   <button id="leftBtn" onclick="goLeft()">Go Left</button>
   <button id="rightBtn" onclick="goRight()">Go Right</button>
 
+  <script
   <script>
-    // ===== BLOCK 1: Initial Choices =====
+  // Other functions like goLeft(), goRight(), goForward(), goBack(), swim(), buildRaft(), etc.
+
+  function exploreCave() {
+    document.getElementById("story").innerText =
+      "Inside the cave, you find a sleeping dragon! Do you Sneak or Run?";
+
+    document.getElementById("leftBtn").innerText = "Sneak";
+    document.getElementById("leftBtn").setAttribute("onclick", "sneakPastDragon()");
+
+    document.getElementById("rightBtn").innerText = "Run";
+    document.getElementById("rightBtn").setAttribute("onclick", "runAwayFromDragon()");
+
+    document.getElementById("leftBtn").style.display = "inline";
+    document.getElementById("rightBtn").style.display = "inline";
+  }
+
+  function sneakPastDragon() {
+    document.getElementById("story").innerText =
+      "You sneak past and find an even bigger treasure! 🎉 You Win!";
+    document.getElementById("leftBtn").style.display = "none";
+    document.getElementById("rightBtn").style.display = "none";
+  }
+
+  function runAwayFromDragon() {
+    document.getElementById("story").innerText =
+      "The dragon wakes up and you barely escape. Game Over. 😱";
+    document.getElementById("leftBtn").style.display = "none";
+    document.getElementById("rightBtn").style.display = "none";
+  }
+</script>
+  // ===== BLOCK 1: Initial Choices =====
     function goLeft() {
       document.getElementById("story").innerText =
         "You found a path deeper into the forest. Do you go Forward or Back?";
