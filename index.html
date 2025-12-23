@@ -11,39 +11,8 @@
   <button id="leftBtn" onclick="goLeft()">Go Left</button>
   <button id="rightBtn" onclick="goRight()">Go Right</button>
 
-  <script
   <script>
-  // Other functions like goLeft(), goRight(), goForward(), goBack(), swim(), buildRaft(), etc.
-
-  function exploreCave() {
-    document.getElementById("story").innerText =
-      "Inside the cave, you find a sleeping dragon! Do you Sneak or Run?";
-
-    document.getElementById("leftBtn").innerText = "Sneak";
-    document.getElementById("leftBtn").setAttribute("onclick", "sneakPastDragon()");
-
-    document.getElementById("rightBtn").innerText = "Run";
-    document.getElementById("rightBtn").setAttribute("onclick", "runAwayFromDragon()");
-
-    document.getElementById("leftBtn").style.display = "inline";
-    document.getElementById("rightBtn").style.display = "inline";
-  }
-
-  function sneakPastDragon() {
-    document.getElementById("story").innerText =
-      "You sneak past and find an even bigger treasure! 🎉 You Win!";
-    document.getElementById("leftBtn").style.display = "none";
-    document.getElementById("rightBtn").style.display = "none";
-  }
-
-  function runAwayFromDragon() {
-    document.getElementById("story").innerText =
-      "The dragon wakes up and you barely escape. Game Over. 😱";
-    document.getElementById("leftBtn").style.display = "none";
-    document.getElementById("rightBtn").style.display = "none";
-  }
-</script>
-  // ===== BLOCK 1: Initial Choices =====
+    // ===== START: Initial Choices =====
     function goLeft() {
       document.getElementById("story").innerText =
         "You found a path deeper into the forest. Do you go Forward or Back?";
@@ -64,25 +33,12 @@
       document.getElementById("rightBtn").style.display = "inline";
     }
 
-    // ===== BLOCK 2: Second Layer Choices =====
+    // ===== SECOND LAYER: Forward / Back =====
     function goForward() {
       document.getElementById("story").innerText =
         "You see a river. Do you Swim or Build a Raft?";
       document.getElementById("leftBtn").innerText = "Swim";
-      document.getElementById("leftBtn").setAttribute("onclick", "swim(function swim() {
-  document.getElementById("story").innerText =
-    "You swam across safely! You found a hidden cave with treasure! 🏆 Do you want to explore the cave?";
-  
-  document.getElementById("leftBtn").innerText = "Explore Cave";
-  document.getElementById("leftBtn").setAttribute("onclick", "exploreCave()");
-  
-  document.getElementById("rightBtn").innerText = "Leave";
-  document.getElementById("rightBtn").setAttribute("onclick", "goBack()");
-  
-  document.getElementById("leftBtn").style.display = "inline";
-  document.getElementById("rightBtn").style.display = "inline";
-}
-)");
+      document.getElementById("leftBtn").setAttribute("onclick", "swim()");
       document.getElementById("rightBtn").innerText = "Build Raft";
       document.getElementById("rightBtn").setAttribute("onclick", "buildRaft()");
       document.getElementById("rightBtn").style.display = "inline";
@@ -98,6 +54,7 @@
       document.getElementById("rightBtn").style.display = "inline";
     }
 
+    // ===== MONSTER PATH =====
     function fightMonster() {
       document.getElementById("story").innerText =
         "You fought bravely but lost. Game Over. 😱";
@@ -114,7 +71,7 @@
       document.getElementById("leftBtn").style.display = "inline";
     }
 
-    // ===== BLOCK 3: Adventure Endings =====
+    // ===== RIVER PATH =====
     function swim() {
       document.getElementById("story").innerText =
         "You swam across safely! You found a hidden cave with treasure! 🏆 Do you want to explore the cave?";
@@ -133,7 +90,7 @@
       document.getElementById("rightBtn").style.display = "none";
     }
 
-    // ===== BLOCK 4: Extra Adventure Paths =====
+    // ===== CAVE PATH =====
     function exploreCave() {
       document.getElementById("story").innerText =
         "Inside the cave, you find a sleeping dragon! Do you Sneak or Run?";
@@ -141,6 +98,7 @@
       document.getElementById("leftBtn").setAttribute("onclick", "sneakPastDragon()");
       document.getElementById("rightBtn").innerText = "Run";
       document.getElementById("rightBtn").setAttribute("onclick", "runAwayFromDragon()");
+      document.getElementById("leftBtn").style.display = "inline";
       document.getElementById("rightBtn").style.display = "inline";
     }
 
@@ -160,4 +118,3 @@
   </script>
 </body>
 </html>
-
