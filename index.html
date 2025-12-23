@@ -46,3 +46,92 @@
   </script>
 </body>
 </html>
+function goForward() {
+  document.getElementById("story").innerText =
+    "You see a river. Do you Swim or Build a Raft?";
+  
+  document.getElementById("leftBtn").innerText = "Swim";
+  document.getElementById("leftBtn").setAttribute("onclick", "swim()");
+  
+  document.getElementById("rightBtn").innerText = "Build Raft";
+  document.getElementById("rightBtn").setAttribute("onclick", "buildRaft()");
+}
+
+function goBack() {
+  document.getElementById("story").innerText =
+    "You are back at the forest entrance. Which way now?";
+  
+  document.getElementById("leftBtn").innerText = "Go Left";
+  document.getElementById("leftBtn").setAttribute("onclick", "goLeft()");
+  
+  document.getElementById("rightBtn").innerText = "Go Right";
+  document.getElementById("rightBtn").setAttribute("onclick", "goRight()");
+}
+
+function fightMonster() {
+  document.getElementById("story").innerText = "You fought bravely but lost. Game Over.";
+  // Optionally hide buttons
+  document.getElementById("leftBtn").style.display = "none";
+  document.getElementById("rightBtn").style.display = "none";
+}
+
+function runAway() {
+  document.getElementById("story").innerText = "You ran away safely. The adventure continues...";
+  document.getElementById("leftBtn").innerText = "Go Forward";
+  document.getElementById("leftBtn").setAttribute("onclick", "goForward()");
+  document.getElementById("rightBtn").style.display = "none";
+}
+
+function swim() {
+  document.getElementById("story").innerText = "You swam across safely! You found a cave.";
+  document.getElementById("leftBtn").style.display = "none";
+  document.getElementById("rightBtn").style.display = "none";
+}
+
+function buildRaft() {
+  document.getElementById("story").innerText = "The raft falls apart! You are swept away. Game Over.";
+  document.getElementById("leftBtn").style.display = "none";
+  document.getElementById("rightBtn").style.display = "none";
+}
+function goLeft() {
+  document.getElementById("story").innerText =
+    "You found a path deeper into the forest. Do you go Forward or Back?";
+  
+  document.getElementById("leftBtn").innerText = "Go Forward";
+  document.getElementById("leftBtn").setAttribute("onclick", "goForward()");
+  
+  document.getElementById("rightBtn").innerText = "Go Back";
+  document.getElementById("rightBtn").setAttribute("onclick", "goBack()");
+}
+
+function goRight() {
+  document.getElementById("story").innerText =
+    "A monster appears! Do you Fight or Run?";
+  
+  document.getElementById("leftBtn").innerText = "Fight";
+  document.getElementById("leftBtn").setAttribute("onclick", "fightMonster()");
+  
+  document.getElementById("rightBtn").innerText = "Run";
+  document.getElementById("rightBtn").setAttribute("onclick", "runAway()");
+}
+<p id="story">You are in a forest. Which way do you go?</p>
+
+<button id="leftBtn" onclick="goLeft()">Go Left</button>
+<button id="rightBtn" onclick="goRight()">Go Right</button>
+
+<script>
+  // All your JavaScript functions go here
+</script>
+// Existing functions: goLeft, goRight, etc.
+
+// New block 1
+function exploreCave() { ... }
+function findTreasure() { ... }
+
+// New block 2
+function climbTree() { ... }
+function spotRiver() { ... }
+
+// New block 3
+function meetWizard() { ... }
+function getMagicKey() { ... }
