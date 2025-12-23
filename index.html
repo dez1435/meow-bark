@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>adventure.meow-bark</title>
+  <title>Adventure Game</title>
 </head>
 <body>
   <h1>Adventure Game</h1>
-  <p id="story">You are in a forest.</p>
+  <p id="story">You are in a forest. Which way do you go?</p>
 
+  <!-- Buttons for player choices -->
   <button onclick="goLeft()">Go Left</button>
   <button onclick="goRight()">Go Right</button>
 
+  <!-- JavaScript goes here -->
   <script>
     function goLeft() {
       document.getElementById("story").innerText =
@@ -19,6 +21,27 @@
     function goRight() {
       document.getElementById("story").innerText =
         "A monster got you 😱 Game over.";
+    }
+
+    // You can add more functions here
+    function goForward() {
+      document.getElementById("story").innerText =
+        "You see a river. Do you swim or build a raft?";
+    }
+
+    function goBack() {
+      document.getElementById("story").innerText =
+        "You are back at the forest entrance. Which way now?";
+    }
+
+    function swim() {
+      document.getElementById("story").innerText =
+        "You swam across safely! On the other side, you find a cave.";
+    }
+
+    function buildRaft() {
+      document.getElementById("story").innerText =
+        "The raft falls apart! You are swept away. Game over.";
     }
   </script>
 </body>
