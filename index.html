@@ -1,18 +1,29 @@
-<!DOCTYPE html>
+<title>Adventure Game</title>
+</head>
+<body><!DOCTYPE html>
 <html>
 <head>
-  <title>Adventure Game</title>
-</head>
-<body>
   <h1>Adventure Game</h1>
   <p id="story">You are in a forest. Which way do you go?</p>
 
   <!-- Buttons for player choices -->
-  <button id="leftBtn" onclick="goLeft()">Go Left</button>
+  <button id="leftBtn" onlick="goLeft()">Go Left</button>
   <button id="rightBtn" onclick="goRight()">Go Right</button>
 
   <script>
-    // ===== START: Initial Choices =====
+    <title>Adventure Game</title>
+</head>
+<body><!DOCTYPE html>
+<html>
+<head>
+  <h1>Adventure Game</h1>
+  <p id="story">You are in a forest. Which way do you go?</p>
+
+  <!-- Buttons for player choices -->
+  <button id="leftBtn" onlick="goLeft()">Go Left</button>
+  <button id="rightBtn" onclick="goRight()">Go Right</button>
+
+    // ===== START: Initiacl Choices =====
     function goLeft() {
       document.getElementById("story").innerText =
         "You found a path deeper into the forest. Do you go Forward or Back?";
