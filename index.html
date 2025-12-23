@@ -38,7 +38,20 @@
       document.getElementById("story").innerText =
         "You see a river. Do you Swim or Build a Raft?";
       document.getElementById("leftBtn").innerText = "Swim";
-      document.getElementById("leftBtn").setAttribute("onclick", "swim()");
+      document.getElementById("leftBtn").setAttribute("onclick", "swim(function swim() {
+  document.getElementById("story").innerText =
+    "You swam across safely! You found a hidden cave with treasure! 🏆 Do you want to explore the cave?";
+  
+  document.getElementById("leftBtn").innerText = "Explore Cave";
+  document.getElementById("leftBtn").setAttribute("onclick", "exploreCave()");
+  
+  document.getElementById("rightBtn").innerText = "Leave";
+  document.getElementById("rightBtn").setAttribute("onclick", "goBack()");
+  
+  document.getElementById("leftBtn").style.display = "inline";
+  document.getElementById("rightBtn").style.display = "inline";
+}
+)");
       document.getElementById("rightBtn").innerText = "Build Raft";
       document.getElementById("rightBtn").setAttribute("onclick", "buildRaft()");
       document.getElementById("rightBtn").style.display = "inline";
