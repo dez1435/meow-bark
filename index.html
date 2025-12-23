@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My First Game</title>
+</head>
+<body>
+  <h1>Adventure Game</h1>
+  <p id="story">You are in a forest.</p>
+
+  <button onclick="goLeft()">Go Left</button>
+  <button onclick="goRight()">Go Right</button>
+
+  <script>
+    function goLeft() {
+      document.getElementById("story").innerText =
+        "You found treasure! 🏆 You win!";
+    }
+
+    function goRight() {
+      document.getElementById("story").innerText =
+        "A monster got you 😱 Game over.";
+    }
+  </script>
+</body>
+</html>
